@@ -2,6 +2,8 @@ name: Download Integration Content to Git
 
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 
 jobs:
   call-download-workflow:
