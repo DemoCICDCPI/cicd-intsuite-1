@@ -13,10 +13,10 @@ jobs:
       ids: "DEMO"
       mode: "IntegrationPackages"
       commit-message: "Import DEMO package from BTP"
-      btp-api-user: ${{ secrets.BTP_CLIENT_ID }}
-      btp-tec-user: ${{ secrets.BTP_CLIENT_ID }}
-      btp-token-url: ${{ secrets.BTP_TOKEN_URL }}
-      btp-api-url: ${{ secrets.BTP_SERVICE_URL }}
+      btp-api-user: ${{ vars.BTP_CLIENT_ID }}
+      btp-tec-user: ${{ vars.BTP_CLIENT_ID }}
+      btp-token-url: ${{ vars.BTP_TOKEN_URL }}
+      btp-api-url: ${{ vars.BTP_SERVICE_URL }}
       git-cicd-orgrepo: "iamsubbash/cicd-actions-1"
     secrets:
       BTP_API_PASSWORD: ${{ secrets.BTP_CLIENT_SECRET }}
