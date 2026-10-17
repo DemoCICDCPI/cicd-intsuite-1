@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-download-workflow:
-    uses: iamsubbash/cicd-actions-1/.github/workflows/download-to-git.yml@main
+    uses: iamsubbash/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
     with:
       workflow-ref: main
       source-env: DEV
