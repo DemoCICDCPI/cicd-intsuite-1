@@ -1,21 +1,15 @@
 name: Download Integration Content to Git
 
 on:
-  workflow_dispatch: # Allows you to trigger this manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
-  download:
-    runs-on: ubuntu-latest
-    environment: DEV # Uses the DEV environment secrets we just created
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Download Integration Package from BTP
-        uses: iamsubbash/cicd-actions-1/actions/download-btp-to-git@main
-        with:
-          oauth: ${{ secrets.BTP_TOKEN_URL }}
-          id: ${{ secrets.BTP_CLIENT_ID }}
-          secret: ${{ secrets.BTP_CLIENT_SECRET }}
-          serviceUrl: ${{ secrets.BTP_SERVICE_URL }}
+  call-download-workflow:
+    uses: iamsubbash/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
+    with:
+      source-env: DEV
+    secrets:
+      BTP_CLIENT_ID: ${{ secrets.BTP_CLIENT_ID }}
+      BTP_CLIENT_SECRET: ${{ secrets.BTP_CLIENT_SECRET }}
+      BTP_TOKEN_URL: ${{ secrets.BTP_TOKEN_URL }}
+      BTP_SERVICE_URL: ${{ secrets.BTP_SERVICE_URL }}
