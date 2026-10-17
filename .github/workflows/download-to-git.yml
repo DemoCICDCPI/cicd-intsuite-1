@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Download Integration Package from BTP
-        uses: iamsubbash/cicd-actions-1/.github/actions/download-btp-to-git@main
+        uses: iamsubbash/cicd-actions-1/.github/workflows/download-btp-to-git.yml
         with:
           oauth: ${{ secrets.BTP_TOKEN_URL }}
           id: ${{ secrets.BTP_CLIENT_ID }}
