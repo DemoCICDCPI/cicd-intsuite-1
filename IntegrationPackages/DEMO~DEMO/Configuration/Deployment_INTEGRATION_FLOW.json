@@ -1,0 +1,16 @@
+{
+  "PackageIntegrationFlowDeployments": {
+    "PackageName": "DEMO",
+    "PackageID": "DEMO",
+    "IntegrationFlows": [
+      {
+        "ArtifactID": "DEMO_CI_CD_pipeline",
+        "ArtifactName": "DEMO_CI_CD_pipeline",
+        "Deploy": "false",
+        "Rank": "100",
+        "LogLevel": "INFO",
+        "Runtimes": "iflmap"
+      }
+    ]
+  }
+}
