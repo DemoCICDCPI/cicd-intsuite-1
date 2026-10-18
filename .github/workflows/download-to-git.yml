@@ -15,10 +15,10 @@ jobs:
       ids: "DEMO"
       mode: "IntegrationPackages"
       commit-message: "Import DEMO package from BTP"
-      btp-api-user: ${{ vars.BTP_CLIENT_ID }}
-      btp-tec-user: ${{ vars.BTP_CLIENT_ID }}
-      btp-token-url: ${{ vars.BTP_TOKEN_URL }}
-      btp-api-url: ${{ vars.BTP_SERVICE_URL }}
+      btp-api-user: "sb-655751e5-0b87-4364-82c8-e80a7748ec10!b726807|it-rt-d69c99f7trial!b55215"
+      btp-tec-user: "sb-655751e5-0b87-4364-82c8-e80a7748ec10!b726807|it-rt-d69c99f7trial!b55215"
+      btp-token-url: "https://d69c99f7trial.authentication.us10.hana.ondemand.com/oauth/token"
+      btp-api-url: "https://d69c99f7trial.it-cpitrial06-rt.cfapps.us10-001.hana.ondemand.com"
       git-cicd-orgrepo: "iamsubbash/cicd-actions-1"
     secrets:
       BTP_API_PASSWORD: ${{ secrets.BTP_CLIENT_SECRET }}
