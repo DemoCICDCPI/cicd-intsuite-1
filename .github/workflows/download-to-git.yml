@@ -18,7 +18,7 @@ jobs:
       btp-api-user: "sb-655751e5-0b87-4364-82c8-e80a7748ec10!b726807|it-rt-d69c99f7trial!b55215"
       btp-tec-user: ""
       btp-token-url: "https://d69c99f7trial.authentication.us10.hana.ondemand.com/oauth/token"
-      btp-api-url: "https://d69c99f7trial.it-cpitrial06-rt.cfapps.us10-001.hana.ondemand.com"
+      btp-api-url: "https://d69c99f7trial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com"
       git-cicd-orgrepo: "iamsubbash/cicd-actions-1"
     secrets:
       BTP_API_PASSWORD: ${{ secrets.BTP_CLIENT_SECRET }}
