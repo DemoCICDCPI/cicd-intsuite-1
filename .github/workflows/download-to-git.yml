@@ -8,7 +8,6 @@ permissions:
 jobs:
   call-download-workflow:
     uses: iamsubbash/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
-    environment: DEV
     with:
       workflow-ref: main
       source-env: DEV
@@ -24,3 +23,4 @@ jobs:
     secrets:
       BTP_API_PASSWORD: ${{ secrets.BTP_CLIENT_SECRET }}
       BTP_TEC_PASSWORD: ${{ secrets.BTP_CLIENT_SECRET }}
+      GIT_CICD_TOKEN: ${{ secrets.GIT_CICD_TOKEN }}
