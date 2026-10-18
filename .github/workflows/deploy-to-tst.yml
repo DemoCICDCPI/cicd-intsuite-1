@@ -4,17 +4,18 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  call-upload-workflow:
+  call-deploy-workflow:
     uses: iamsubbash/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
     with:
       workflow-ref: main
-      target-env: TST
+      source-env: TST
       target-ref: main
       ids: "DEMO"
       mode: "IntegrationPackages"
+      commit-message: "Deploy DEMO package to TST"
       btp-api-user: "sb-febe5952-6501-4132-8564-19764bdf509b!b726806|it!b55215"
       btp-tec-user: ""
       btp-token-url: "https://6a274a5atrial.authentication.us10.hana.ondemand.com/oauth/token"
