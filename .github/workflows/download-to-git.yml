@@ -15,7 +15,7 @@ jobs:
       ids: "DEMO"
       mode: "IntegrationPackages"
       commit-message: "Import DEMO package from BTP"
-      btp-api-user: "sb-655751e5-0b87-4364-82c8-e80a7748ec10!b726807|it-rt-d69c99f7trial!b55215"
+      btp-api-user: "sb-69ea8572-8674-412e-a2b1-b08891f3b3d1!b726807|it!b55215"
       btp-tec-user: ""
       btp-token-url: "https://d69c99f7trial.authentication.us10.hana.ondemand.com/oauth/token"
       btp-api-url: "https://d69c99f7trial.it-cpitrial06.cfapps.us10-001.hana.ondemand.com"
