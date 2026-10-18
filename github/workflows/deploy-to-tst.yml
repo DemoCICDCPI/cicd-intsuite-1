@@ -1,0 +1,26 @@
+name: Deploy Integration Content to TST
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  call-upload-workflow:
+    uses: iamsubbash/cicd-actions-1/.github/workflows/upload-git-to-btp.yml@main
+    with:
+      workflow-ref: main
+      target-env: TST
+      target-ref: main
+      ids: "DEMO"
+      mode: "IntegrationPackages"
+      btp-api-user: "sb-febe5952-6501-4132-8564-19764bdf509b!b726806|it!b55215"
+      btp-tec-user: ""
+      btp-token-url: "https://6a274a5atrial.authentication.us10.hana.ondemand.com/oauth/token"
+      btp-api-url: "https://6a274a5atrial.it-cpitrial06.cfapps.us10-001.hana.ondemand.com"
+      git-cicd-orgrepo: "iamsubbash/cicd-actions-1"
+    secrets:
+      BTP_API_PASSWORD: ${{ secrets.BTP_CLIENT_SECRET_TST }}
+      BTP_TEC_PASSWORD: "unused"
+      GIT_CICD_TOKEN: ${{ secrets.GIT_CICD_TOKEN }}
