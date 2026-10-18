@@ -8,6 +8,7 @@ permissions:
 jobs:
   call-download-workflow:
     uses: iamsubbash/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
+    environment: DEV
     with:
       workflow-ref: main
       source-env: DEV
