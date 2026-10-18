@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   call-upload-workflow:
-    uses: iamsubbash/cicd-actions-1/.github/workflows/upload-git-to-btp.yml@main
+    uses: iamsubbash/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
     with:
       workflow-ref: main
       target-env: TST
