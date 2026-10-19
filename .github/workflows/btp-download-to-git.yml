@@ -55,7 +55,7 @@ jobs:
       - name: Generate GitHub App token
         id: app-token
         if: ${{ vars.GIT_GITHUB_APP_ID != '' }}
-        uses: actions/create-github-app-token@main
+        uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ vars.GIT_GITHUB_APP_ID }}
           private-key: ${{ secrets.GIT_GITHUB_APP_PRIVATE_KEY }}
@@ -72,7 +72,7 @@ jobs:
           echo "token=$TOKEN" >> $GITHUB_OUTPUT
 
       - name: Check team authorization
-        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@main
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
         with:
           team-slug: ${{ vars.BTP_ADMIN_TEAM_SLUG }}
           github-token: ${{ steps.org-token.outputs.token }}
@@ -89,9 +89,9 @@ jobs:
   btp-download-package:
     needs: [initialize]
     name: Download from BTP to GIT
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/download-btp-to-git.yml@v1
     with:
-       workflow-ref: main
+       workflow-ref: v1
        source-env: ${{ inputs.source-env }}
        target-ref: download
        ids: ${{ inputs.ids }}
