@@ -91,7 +91,7 @@ jobs:
           echo "token=$TOKEN" >> $GITHUB_OUTPUT
 
       - name: Check team authorization
-        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@main
         with:
           team-slug: ${{ vars.BTP_ADMIN_TEAM_SLUG }}
           github-token: ${{ steps.org-token.outputs.token }}
@@ -110,9 +110,9 @@ jobs:
   btp-process-ids:
     needs: [initialize]
     name: Process ${{ github.event.inputs.mode }}
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload.yml@main
     with:
-      workflow-ref: v1
+      workflow-ref: main
       target-env: ${{ github.event.inputs.target-env }}
       source-ref: ${{ github.event.inputs.source-ref }}
       integrationpackages-delete-ids: ${{ github.event.inputs.mode == 'IntegrationPackages' && github.event.inputs.delete-ids || '' }}

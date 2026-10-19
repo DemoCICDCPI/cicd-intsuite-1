@@ -70,7 +70,7 @@ jobs:
           echo "token=$TOKEN" >> $GITHUB_OUTPUT
 
       - name: Check team authorization
-        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@main
         with:
           team-slug: ${{ vars.BTP_DEV_TEAM_SLUG }}
           github-token: ${{ steps.org-token.outputs.token }}
@@ -86,9 +86,9 @@ jobs:
 
   update-externalized-iflow-parameters:
     needs: initialize
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/update-externalized-iflow-parameters.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/update-externalized-iflow-parameters.yml@main
     with:
-       workflow-ref: v1
+       workflow-ref: main
        target-env: ${{ inputs.target-env }}
        iflow-id: ${{ inputs.iflow-id }}
        source-ref: development

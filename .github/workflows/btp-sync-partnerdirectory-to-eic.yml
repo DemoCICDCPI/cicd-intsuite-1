@@ -71,7 +71,7 @@ jobs:
           private-key: ${{ secrets.GIT_GITHUB_APP_PRIVATE_KEY }}
 
       - name: Check team authorization
-        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@main
         with:
           team-slug: ${{ vars.BTP_ADMIN_TEAM_SLUG }}
           github-token: ${{ steps.app-token.outputs.token }}
@@ -104,9 +104,9 @@ jobs:
   sync-pd-to-eic:
     needs: [initialize]
     name: Sync Partner Directory to EIC
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/sync-partnerdirectory-to-eic.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/sync-partnerdirectory-to-eic.yml@main
     with:
-      workflow-ref: v1
+      workflow-ref: main
       target-env: ${{ github.event.inputs.target-env }}
       partnerdirectory-ids: ${{ github.event.inputs.partner-ids }}
       btp-api-user: ${{ needs.initialize.outputs.btp-api-user }}

@@ -72,7 +72,7 @@ jobs:
           echo "token=$TOKEN" >> $GITHUB_OUTPUT
 
       - name: Check team authorization
-        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@main
         with:
           team-slug: ${{ vars.BTP_DEV_TEAM_SLUG }}
           github-token: ${{ steps.org-token.outputs.token }}
@@ -90,9 +90,9 @@ jobs:
   delete-on-dev:
     needs: initialize-dev
     name: Delete from DEV
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload.yml@main
     with:
-      workflow-ref: v1
+      workflow-ref: main
       target-env: DEV
       source-ref: development
       integrationpackages-delete-ids: ${{ github.event.inputs.mode == 'IntegrationPackages' && github.event.inputs.id || '' }}
@@ -135,9 +135,9 @@ jobs:
   delete-on-tst:
     needs: initialize-tst
     name: Delete from TST
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload.yml@main
     with:
-      workflow-ref: v1
+      workflow-ref: main
       target-env: TST
       source-ref: development
       integrationpackages-delete-ids: ${{ github.event.inputs.mode == 'IntegrationPackages' && github.event.inputs.id || '' }}
@@ -157,9 +157,9 @@ jobs:
   delete-from-git:
       needs: [delete-on-tst, initialize-tst]
       name: Delete from GIT
-      uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-dir-from-git.yml@v1
+      uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-dir-from-git.yml@main
       with:
-        workflow-ref: v1
+        workflow-ref: main
         id: ${{ inputs.id }}
         mode: ${{ inputs.mode }}
         source-ref: development

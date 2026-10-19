@@ -56,7 +56,7 @@ jobs:
           private-key: ${{ secrets.GIT_GITHUB_APP_PRIVATE_KEY }}
 
       - name: Check team authorization
-        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@main
         with:
           team-slug: ${{ vars.BTP_ADMIN_TEAM_SLUG }}
           github-token: ${{ steps.app-token.outputs.token }}
@@ -73,9 +73,9 @@ jobs:
   btp-download-access-policies:
     needs: initialize-dev
     name: Download Access Policies from DEV
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/btp-download-access-policies-to-git.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/btp-download-access-policies-to-git.yml@main
     with:
-      workflow-ref: v1
+      workflow-ref: main
       source-env: DEV
       target-ref: development
       names: ${{ inputs.names }}
@@ -114,9 +114,9 @@ jobs:
   btp-upload-access-policies:
     needs: [read-env-vars-tst]
     name: Upload Access Policies to TST
-    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload-access-policies.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload-access-policies.yml@main
     with:
-      workflow-ref: v1
+      workflow-ref: main
       target-env: TST
       source-ref: development
       accesspolicies-upload-names: ${{ inputs.names }}
