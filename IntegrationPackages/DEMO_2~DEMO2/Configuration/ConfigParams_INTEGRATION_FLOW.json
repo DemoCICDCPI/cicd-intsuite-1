@@ -1,0 +1,23 @@
+{
+  "PackageIntegrationFlowParameters": {
+    "PackageName": "DEMO_2",
+    "PackageID": "DEMO2",
+    "Artifacts": [
+      {
+        "ArtifactID": "DEMO_CICD_2",
+        "ArtifactName": "DEMO_CICD_2",
+        "ArtifactType": "INTEGRATION_FLOW",
+        "Parameters": [
+          {
+            "DataType": "xsd:string",
+            "Description": null,
+            "ParameterKey": "SAP_ProfileId",
+            "ParameterValues": {
+              "Default": "iflmap"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

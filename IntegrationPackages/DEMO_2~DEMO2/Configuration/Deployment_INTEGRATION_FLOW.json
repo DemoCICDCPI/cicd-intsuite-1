@@ -1,0 +1,16 @@
+{
+  "PackageIntegrationFlowDeployments": {
+    "PackageName": "DEMO_2",
+    "PackageID": "DEMO2",
+    "IntegrationFlows": [
+      {
+        "ArtifactID": "DEMO_CICD_2",
+        "ArtifactName": "DEMO_CICD_2",
+        "Deploy": "false",
+        "Rank": "100",
+        "LogLevel": "INFO",
+        "Runtimes": "iflmap"
+      }
+    ]
+  }
+}
