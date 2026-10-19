@@ -91,7 +91,7 @@ jobs:
     name: Download from BTP to GIT
     uses: DemoCICDCPI/cicd-actions-1/.github/workflows/download-btp-to-git.yml@main
     with:
-       workflow-ref: v1
+       workflow-ref: main
        source-env: ${{ inputs.source-env }}
        target-ref: download
        ids: ${{ inputs.ids }}
