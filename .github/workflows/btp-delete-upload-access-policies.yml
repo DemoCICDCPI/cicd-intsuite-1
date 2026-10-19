@@ -29,8 +29,10 @@ on:
         description: "Target BTP Environment"
         required: false
         type: choice
-        options:  #!cicd:target-env-options!
+        options:
           - ""
+          - "DEV"
+          - "TST"
 
 permissions:
   contents: write
@@ -66,7 +68,7 @@ jobs:
           private-key: ${{ secrets.GIT_GITHUB_APP_PRIVATE_KEY }}
 
       - name: Check team authorization
-        uses: SAP/cicd-actions-for-sap-integration-suite/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
         with:
           team-slug: ${{ vars.BTP_ADMIN_TEAM_SLUG }}
           github-token: ${{ steps.app-token.outputs.token }}
@@ -83,7 +85,7 @@ jobs:
   btp-delete-upload-access-policies:
     needs: [initialize]
     name: Delete or Upload Access Policies
-    uses: SAP/cicd-actions-for-sap-integration-suite/.github/workflows/delete-upload-access-policies.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload-access-policies.yml@v1
     with:
       workflow-ref: v1
       target-env: ${{ inputs.target-env }}

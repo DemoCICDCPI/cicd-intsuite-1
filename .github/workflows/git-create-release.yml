@@ -105,7 +105,7 @@ jobs:
   create-release:
     needs: [initialize]
     name: Create Release
-    uses: SAP/cicd-actions-for-sap-integration-suite/.github/workflows/create-release.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/create-release.yml@v1
     with:
       workflow-ref: v1
       release-name: ${{ github.event.inputs.release-name }}

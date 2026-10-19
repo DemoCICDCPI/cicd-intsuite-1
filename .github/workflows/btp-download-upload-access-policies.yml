@@ -56,7 +56,7 @@ jobs:
           private-key: ${{ secrets.GIT_GITHUB_APP_PRIVATE_KEY }}
 
       - name: Check team authorization
-        uses: SAP/cicd-actions-for-sap-integration-suite/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
         with:
           team-slug: ${{ vars.BTP_ADMIN_TEAM_SLUG }}
           github-token: ${{ steps.app-token.outputs.token }}
@@ -73,7 +73,7 @@ jobs:
   btp-download-access-policies:
     needs: initialize-dev
     name: Download Access Policies from DEV
-    uses: SAP/cicd-actions-for-sap-integration-suite/.github/workflows/btp-download-access-policies-to-git.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/btp-download-access-policies-to-git.yml@v1
     with:
       workflow-ref: v1
       source-env: DEV
@@ -114,7 +114,7 @@ jobs:
   btp-upload-access-policies:
     needs: [read-env-vars-tst]
     name: Upload Access Policies to TST
-    uses: SAP/cicd-actions-for-sap-integration-suite/.github/workflows/delete-upload-access-policies.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/delete-upload-access-policies.yml@v1
     with:
       workflow-ref: v1
       target-env: TST

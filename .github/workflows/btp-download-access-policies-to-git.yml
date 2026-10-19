@@ -20,8 +20,10 @@ on:
         description: "Environment - Source BTP for Download"
         required: true
         type: choice
-        options:  #!cicd:target-env-options!
+        options:
           - ""
+          - "DEV"
+          - "TST"
       commit-message:
         description: "JIRA Story / SNOW Incident"
         required: true
@@ -60,7 +62,7 @@ jobs:
           private-key: ${{ secrets.GIT_GITHUB_APP_PRIVATE_KEY }}
 
       - name: Check team authorization
-        uses: SAP/cicd-actions-for-sap-integration-suite/.github/actions/check-team-authorization@v1
+        uses: DemoCICDCPI/cicd-actions-1/.github/actions/check-team-authorization@v1
         with:
           team-slug: ${{ vars.BTP_ADMIN_TEAM_SLUG }}
           github-token: ${{ steps.app-token.outputs.token }}
@@ -77,7 +79,7 @@ jobs:
   btp-download-access-policies-to-git:
     needs: [initialize]
     name: Download from BTP to GIT
-    uses: SAP/cicd-actions-for-sap-integration-suite/.github/workflows/btp-download-access-policies-to-git.yml@v1
+    uses: DemoCICDCPI/cicd-actions-1/.github/workflows/btp-download-access-policies-to-git.yml@v1
     with:
       workflow-ref: v1
       source-env: ${{ inputs.source-env }}
