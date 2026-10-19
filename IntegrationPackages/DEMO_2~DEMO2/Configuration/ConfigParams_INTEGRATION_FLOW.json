@@ -17,6 +17,21 @@
             }
           }
         ]
+      },
+      {
+        "ArtifactID": "DEMO_CICD_3",
+        "ArtifactName": "DEMO_CICD_3",
+        "ArtifactType": "INTEGRATION_FLOW",
+        "Parameters": [
+          {
+            "DataType": "xsd:string",
+            "Description": null,
+            "ParameterKey": "SAP_ProfileId",
+            "ParameterValues": {
+              "Default": "iflmap"
+            }
+          }
+        ]
       }
     ]
   }

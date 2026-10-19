@@ -10,6 +10,14 @@
         "Rank": "100",
         "LogLevel": "INFO",
         "Runtimes": "iflmap"
+      },
+      {
+        "ArtifactID": "DEMO_CICD_3",
+        "ArtifactName": "DEMO_CICD_3",
+        "Deploy": "false",
+        "Rank": "100",
+        "LogLevel": "INFO",
+        "Runtimes": "iflmap"
       }
     ]
   }
