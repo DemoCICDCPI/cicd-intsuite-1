@@ -39,7 +39,6 @@ on:
         type: choice
         options:
           - ""
-          - "DEV"
           - "TST"
 
 permissions:
