@@ -24,6 +24,7 @@ on:
         type: choice
         options:
           - ""
+          - "DEV"
           - "TST"
       mode:
         description: "Mode IntegrationPackages/PartnerDirectory"

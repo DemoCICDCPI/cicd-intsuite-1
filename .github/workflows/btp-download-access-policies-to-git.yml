@@ -22,6 +22,7 @@ on:
         type: choice
         options:
           - ""
+          - "DEV"
           - "TST"
       commit-message:
         description: "JIRA Story / SNOW Incident"

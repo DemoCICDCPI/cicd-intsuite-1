@@ -21,6 +21,7 @@ on:
         type: choice
         options:
           - ""
+          - "DEV"
           - "TST"
       iflow-id:
         description: "IFlow ID"
